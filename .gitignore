@@ -29,3 +29,4 @@ pkg/
 .autotest
 ext/nmatrix_java/vendor/
 ext/nmatrix_java/target/
+ext/nmatrix_java/build/
