@@ -41,10 +41,10 @@ if jruby?
 else
   if File.exist?("lib/nmatrix/nmatrix.so") #|| File.exist?("lib/nmatrix/nmatrix.bundle")
     # Development
-    require "nmatrix/nmatrix.so"
+    require_relative "nmatrix/nmatrix.so"
   else
     # Gem
-    require "nmatrix.so"
+    require_relative "../nmatrix.so"
   end
 end
 # require_relative './io/mat_reader'
@@ -1146,7 +1146,7 @@ protected
 end
 
 require_relative './shortcuts.rb'
-require_relative './math.rb'
+# require_relative './math.rb'
 require_relative './enumerate.rb'
 
 require_relative './version.rb'
