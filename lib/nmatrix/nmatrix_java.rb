@@ -204,6 +204,10 @@ class NMatrix
       if (dtype == :RUBYOBJ)
         # nm_register_values(reinterpret_cast<VALUE*>(v), v_size)
       end
+
+      (0...v_size).each do |m|
+        v[m] = right[m]
+      end
     else 
       v = [right]
       if (@dtype == :RUBYOBJ)
@@ -213,7 +217,7 @@ class NMatrix
     if(slice[:single])
       # reinterpret_cast<D*>(s->elements)[nm_dense_storage_pos(s, slice->coords)] = v;
       pos = dense_storage_pos(slice[:coords],stride)
-      @s.setEntry(pos, v)
+      @s.setEntry(pos, v[0])
     else
       v_offset = 0
       dest = {}
