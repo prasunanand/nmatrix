@@ -523,15 +523,7 @@ class NMatrix
   #                     14
   #
   def column(column_number, get_by = :copy)
-    cols = rank(1, column_number, get_by)
-    if jruby?
-      nmatrix = NMatrix.new :copy
-      nmatrix.shape = cols.shape
-      nmatrix.s = cols.s
-      return nmatrix
-    else
-      cols
-    end
+    rank(1, column_number, get_by)
   end
 
   alias :col :column
@@ -548,15 +540,7 @@ class NMatrix
   #   - An NMatrix representing the requested row as a row vector.
   #
   def row(row_number, get_by = :copy)
-    rowElements = rank(0, row_number, get_by)
-    if jruby?
-      nmatrix = NMatrix.new :copy
-      nmatrix.shape = rowElements.shape
-      nmatrix.s = rowElements.s
-      return nmatrix
-    else
-      rowElements
-    end
+    rank(0, row_number, get_by)
   end
 
   #
