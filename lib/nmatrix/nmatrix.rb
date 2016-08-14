@@ -45,6 +45,7 @@ else
   else
     # Gem
     require_relative "../nmatrix.so"
+    require_relative 'math'
   end
 end
 # require_relative './io/mat_reader'
@@ -278,14 +279,14 @@ class NMatrix
   end
 
   # Return the main diagonal or antidiagonal a matrix. Only works with 2D matrices.
-  # 
+  #
   # == Arguments
-  # 
-  # * +main_diagonal+ - Defaults to true. If passed 'false', then will return the 
+  #
+  # * +main_diagonal+ - Defaults to true. If passed 'false', then will return the
   #   antidiagonal of the matrix.
-  # 
+  #
   # == References
-  # 
+  #
   # * http://en.wikipedia.org/wiki/Main_diagonal
   def diagonal main_diagonal=true
     diag_size = [cols, rows].min
@@ -376,9 +377,9 @@ class NMatrix
 
   ##
   # call-seq:
-  # 
+  #
   # object_dtype?() -> Boolean
-  # 
+  #
   # Checks if dtype is a ruby object
   def object_dtype?
     dtype == :object
@@ -894,7 +895,7 @@ class NMatrix
     else
       layer
     end
-    
+
   end
 
 
@@ -1003,9 +1004,9 @@ class NMatrix
     return self.map_stored.inject(sym)
   end
 
-  # Returns the index of the first occurence of the specified value. Returns 
+  # Returns the index of the first occurence of the specified value. Returns
   # an array containing the position of the value, nil in case the value is not found.
-  # 
+  #
   def index(value)
     index = nil
 
@@ -1015,7 +1016,7 @@ class NMatrix
         index = yields
         break
       end
-    end 
+    end
 
     index
   end
@@ -1038,7 +1039,7 @@ class NMatrix
   #
   # call-seq:
   #     repeat(count, axis) -> NMatrix
-  # 
+  #
   # * *Arguments* :
   #   - +count+ -> how many times NMatrix should be repeated
   #   - +axis+ -> index of axis along which NMatrix should be repeated
