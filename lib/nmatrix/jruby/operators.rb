@@ -239,7 +239,7 @@ class NMatrix
   end
 
   def cbrt
-    rresult = create_dummy_nmatrix
+    result = create_dummy_nmatrix
     result.s = @s.copy.mapToSelf(Cbrt.new())
     result
   end
