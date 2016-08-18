@@ -16,7 +16,7 @@ java_import 'ArrayComparator'
 
 class NMatrix
   include_package 'org.apache.commons.math3.analysis.function'
-  attr_accessor :shape, :dim, , :dtype, :stype, :s
+  attr_accessor :shape, :dim, :dtype, :stype, :s
 
   def initialize(*args)
     if args[-1] == :copy
