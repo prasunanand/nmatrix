@@ -67,7 +67,7 @@ To install:
 
     bundle exec rake install
 
-** JRuby **
+*JRuby*
 
     mkdir ext/nmatrix_java/vendor
     Download commons_math.3.6.1 jar and place it in ext/nmatrix_java/vendor directory
