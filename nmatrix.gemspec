@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'http://sciruby.com'
   gem.authors = ['John Woods', 'Chris Wailes', 'Aleksey Timin']
   gem.email =  ['john.o.woods@gmail.com']
-  gem.license = 'BSD 3-clause'
+  gem.license = 'BSD-3-Clause'
   gem.post_install_message = <<-EOF
 ***********************************************************
 Welcome to SciRuby: Tools for Scientific Computing in Ruby!
@@ -57,6 +57,7 @@ EOF
 
   gem.add_dependency 'packable', '~> 1.3', '>= 1.3.5'
   gem.add_development_dependency 'bundler', '~>1.6'
+  gem.add_development_dependency 'json', '~>2.0.1' if RUBY_VERSION >= '2.1.0'
   gem.add_development_dependency 'pry', '~>0.10'
   gem.add_development_dependency 'rake', '~>10.3'
   gem.add_development_dependency 'rake-compiler', '~>0.8'

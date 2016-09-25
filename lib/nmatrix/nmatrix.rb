@@ -199,12 +199,14 @@ class NMatrix
           end
         end
       else # dim 2
-        q.group(0, "\n[\n", "]") do
-          self.each_row.with_index do |row,i|
-            q.group(1, "  [", "]") do
-              q.seplist(self.dim > 2 ? row.to_a[0] : row.to_a, lambda { q.text ", " }, :each_with_index) { |v,j| q.text v.inspect.rjust(longest[j]) }
+        q.group(0, "\n[\n ", "]") do
+          self.each_row.with_index do |row, i|
+            q.group(1, " [", "]\n") do
+              q.seplist(row.to_a, -> { q.text ", " }, :each_with_index) do |v,j|
+                q.text v.inspect.rjust(longest[j])
+              end
             end
-            q.breakable
+            q.breakable unless i + 1 == self.shape[0]
           end
         end
       end
