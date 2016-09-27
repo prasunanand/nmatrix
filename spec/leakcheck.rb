@@ -1,4 +1,4 @@
-require_relative "../lib/nmatrix"
+require "./lib/nmatrix"
 
 # Fixed:
 #n = NMatrix.new(:yale, [8,2], :int64)
