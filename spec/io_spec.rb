@@ -26,7 +26,7 @@
 #
 require "tmpdir" # Used to avoid cluttering the repository.
 require_relative 'spec_helper'
-require_relative "../lib/nmatrix"
+require "./lib/nmatrix"
 
 describe NMatrix::IO do
   let(:tmp_dir)  { Dir.mktmpdir }
